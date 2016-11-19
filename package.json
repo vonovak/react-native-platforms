@@ -1,0 +1,28 @@
+{
+  "name": "react-native-platforms",
+  "version": "0.0.1",
+  "description": "Platform shortcuts for React Native",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/vonovak/react-native-platforms.git"
+  },
+  "keywords": [
+    "react",
+    "native",
+    "platforms",
+    "shortcuts",
+    "ios",
+    "android",
+    "react native"
+  ],
+  "author": "Vojtech Novak",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vonovak/react-native-platforms/issues"
+  },
+  "homepage": "https://github.com/vonovak/react-native-platforms#readme"
+}
