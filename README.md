@@ -12,6 +12,8 @@ It provides exactly the same interface plus the following shortcuts:
 
 ### Usage
 
+`npm i react-native-platforms --save`
+
 ```
 import Platform from 'react-native-platforms'
 ...
