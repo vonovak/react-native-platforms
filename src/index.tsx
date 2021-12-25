@@ -4,7 +4,9 @@ export const mockPlatform = (
   platformName: Exclude<PlatformOSType, 'native'> | undefined
 ) => {
   if (process.env.NODE_ENV === 'test') {
-    RNPlatform.OS = platformName || 'ios';
+    const defaultPlatformReportedByPlatformModuleInTests = 'ios';
+    RNPlatform.OS =
+      platformName || defaultPlatformReportedByPlatformModuleInTests;
   } else {
     console.error(
       `react-native-platforms mockPlatform(${String(
