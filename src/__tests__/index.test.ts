@@ -31,6 +31,7 @@ describe('EnhancedPlatform', () => {
       .spyOn(EnhancedPlatform, 'isIos', 'get')
       .mockReturnValueOnce(false);
     expect(EnhancedPlatform.isIos).toBe(false);
+    // this is expected, jest spy only influences the getter
     expect(EnhancedPlatform.OS).toBe('ios');
     expect(spy).toHaveReturnedWith(false);
     expect(EnhancedPlatform.isIos).toBe(true);
