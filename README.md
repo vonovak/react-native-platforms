@@ -2,7 +2,7 @@
 
 ### Motivation
 
-Ever found yourself writing `Platform.OS === 'android'`? Then you probably created some helper module in your app to export an `isAndroid` constant that you could reuse. And then you maybe wanted to control the behavior in tests and ended up using some way of mocking that with Jest. I also did this and wrapped it so that it can be used easily.
+Ever found yourself writing `Platform.OS === 'android'` or `Platform.OS === 'ios'` a lot? Then you maybe created some helper module in your app to export these as constants that you could reuse. And then you maybe wanted to control the behavior in tests and ended up using some way of mocking that with Jest. I also did this and offer it for reuse:
 
 This package is a simple extension of the existing `Platform` module from React Native core. TS typings are included.
 
