@@ -1,6 +1,6 @@
 {
   "name": "react-native-platforms",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Platform shortcuts for React Native",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
