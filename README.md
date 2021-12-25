@@ -1,31 +1,45 @@
 # react-native-platforms
 
-This package is a simple wrapper over the existing `Platform` module from Reat Native core intended for development on Android and Ios.
+This package is a simple extension of the existing `Platform` module from React Native core. TS typings are included.
 
-It provides exactly the same interface plus the following shortcuts:
+Provided are simple shortcuts and functions for controlling what platform is reported by `react-native-platforms` as well as `ReactNative.Platform.OS` in Jest tests.
 
-|item|type|description|
-|-------|----|-----------|
-|`isAndroid`|boolean|true iff running on android|
-|`isIos`|boolean|true iff running on ios|
-|`ai(forAndroid, forIos)`|function|returns its first or second param based on platform|
+It provides exactly the same functionality plus the following shortcuts:
+
+| item                     | type     | description                                         |
+| ------------------------ | -------- | --------------------------------------------------- |
+| `isAndroid`              | boolean  | true iff running on android                         |
+| `isIos`                  | boolean  | true iff running on ios                             |
+| `isWeb`                  | boolean  | true iff running on web                             |
+| `isWindows`              | boolean  | true iff running on windows                         |
+| `isMacOS`                | boolean  | true iff running on isMacOS                         |
+| `ai(forAndroid, forIos)` | function | returns its first or second param based on platform |
+| `mockPlatform()`         | function | controls what platform is reported in Jest tests    |
+| `mockPlatformIos()`      | function | convenience for `mockPlatform('ios')`               |
+| `mockPlatformAndroid()`  | function | convenience for `mockPlatform('android')`           |
+
+For Jest tests, you sometimes might want the tests to belive they're running on a particular platform. To do that you can use the exported `mockPlatform` / `mockPlatformIos()` / `mockPlatformAndroid()` functions. They only work in test environment, so if you mistakenly call them in the app, they are a noop. See the [test cases](./src/__tests__/index.test.ts) to see how they can be used.
 
 ### Usage
 
-`npm i react-native-platforms --save`
+`yarn add react-native-platforms`
 
-```
-import Platform from 'react-native-platforms'
-...
-render() {
-    const iconName = Platform.ai('iconOnAndroid', 'iconOnIos')
+```js
+import EnhancedPlatform from 'react-native-platforms'
+
+// or use named export
+
+import { EnhancedPlatform } from 'react-native-platforms'
+
+const SomeComponent = () => {
+    const iconName = EnhancedPlatform.ai('iconOnAndroid', 'iconOnIos')
     return (
         ...
-        {Platform.isIos && <OnlyOnIos/>}
+        {EnhancedPlatform.isIos && <OnlyOnIos/>}
     )
 }
 ```
 
-
 ### License
+
 MIT
