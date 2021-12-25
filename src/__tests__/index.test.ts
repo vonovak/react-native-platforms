@@ -36,4 +36,9 @@ describe('EnhancedPlatform', () => {
     expect(spy).toHaveReturnedWith(false);
     expect(EnhancedPlatform.isIos).toBe(true);
   });
+
+  it('jest spy works on Version field', () => {
+    jest.spyOn(EnhancedPlatform, 'Version', 'get').mockReturnValueOnce('12345');
+    expect(EnhancedPlatform.Version).toBe('12345');
+  });
 });

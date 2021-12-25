@@ -15,12 +15,17 @@ export const mockPlatform = (
     );
   }
 };
+
 export const mockPlatformIos = () => {
   mockPlatform('ios');
 };
 
 export const mockPlatformAndroid = () => {
   mockPlatform('android');
+};
+
+export const mockPlatformDefault = () => {
+  mockPlatform(undefined);
 };
 
 function androidIosQuickShortcut<T>(
@@ -50,6 +55,9 @@ export const EnhancedPlatform: EnhancedPlatformType = {
   ...RNPlatform,
   get OS(): RNPlatformType['OS'] {
     return RNPlatform.OS;
+  },
+  get Version(): RNPlatformType['Version'] {
+    return RNPlatform.Version;
   },
   get isAndroid(): boolean {
     return RNPlatform.OS === 'android';
